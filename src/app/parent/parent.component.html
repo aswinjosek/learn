@@ -1,0 +1,13 @@
+<!-- <app-child [message]="msg" (messageEvent)="receiveMessage($event)"></app-child> -->
+<form [formGroup]="signupForm" (ngSubmit)="getValue()">
+    <label for="firstname">First Name: </label>
+    <input id="firstname" type="text" formControlName="firstname"> <br>
+    <div *ngIf="signupForm?.get('firstname')?.invalid && signupForm?.get('firstname')?.touched" class="text-danger">
+        Please enter a valid age (between 1 and 120).
+      </div>
+    <label for="lastname">Last Name: </label>
+    <input id="name" type="text" formControlName="lastname"> <br>
+    <button type="submit">get value</button>
+</form>
+<button (click)="getData()">whether data</button>
+
