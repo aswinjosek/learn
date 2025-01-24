@@ -1,4 +1,7 @@
-<!-- <app-child [message]="msg" (messageEvent)="receiveMessage($event)"></app-child> -->
+<app-child [message]="msg" (messageEvent)="receiveMessage($event)">
+  <!-- content projection -->
+  <p>hello world</p>
+</app-child>
 <form [formGroup]="signupForm" (ngSubmit)="getValue()">
     <label for="firstname">First Name: </label>
     <input id="firstname" type="text" formControlName="firstname"> <br>

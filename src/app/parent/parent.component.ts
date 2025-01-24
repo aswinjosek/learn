@@ -14,6 +14,7 @@ export class ParentComponent implements OnInit {
   //   lastname: new FormControl('', [Validators.required]),
   // });
   signupForm: FormGroup;
+  msg = "hey I'm here"
 
   constructor(private fb: FormBuilder, private api: ApiService) {
     this.signupForm = this.fb.group({
@@ -27,13 +28,15 @@ export class ParentComponent implements OnInit {
     // console.log(this.name);
   }
 
-  receiveMessage($event: any) {
-    console.log('hello');
+  receiveMessage(event: any) {
+    console.log(event);
   }
 
   getValue() {
     this.signupForm.valid;
     // this.signupForm.setValue({'firstname': 'John', 'lastname': 'Doe'});
+    this.signupForm.get('firstname')?.value
+
     console.log(this.signupForm.value);
   }
 
